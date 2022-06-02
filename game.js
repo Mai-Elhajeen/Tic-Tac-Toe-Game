@@ -8,6 +8,10 @@ const chooses = document.querySelectorAll('.choose')
 
 const gamePage = document.querySelector('#game-page')
 const showChange = document.querySelector('#show-change')
+const boxes = document.querySelectorAll('.box')
+
+const winnerPage = document.querySelector('#winner')
+const winnerName = document.querySelector('#winner-name')
 
 // change turns ===> turnX = False || turnO = true
 let changeTurn = null;
@@ -26,5 +30,28 @@ chooses.forEach(choose => {
         }
         startPage.style.display = 'none';
         gamePage.style.display = 'block';
+    })
+})
+
+// add X if change turns = false || add O if change turns = true
+boxes.forEach(box => {
+    box.addEventListener('click', e => {
+        if (changeTurn == false) {
+            box.innerHTML = `<i class="ri-close-fill"></i>`;
+            box.id = 'X'
+            box.style.pointerEvent = 'none'
+            showChange.style.left = '125px'
+
+            changeTurn = true
+        }else {
+            box.innerHTML = `<i class="ri-checkbox-blank-circle-line"></i>`;
+            box.id = 'O'
+            box.style.pointerEvent = 'none'
+            showChange.style.left = '0px'
+    
+            changeTurn = false
+        }
+
+        winning();
     })
 })
