@@ -32,6 +32,50 @@ button {
 }
 
 /* **************** game start page **************** */
+#start-page h2, #winner h2 {
+    font-size: 24px;
+    color: #cdcfdb;
+}
+#start-page #line {
+    height: 1px;
+    width: 100%;
+    background-color: #cdcfdb;
+    margin: 20px 0;
+}
+#start-page h4{
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #b9b9c5;
+}
+#start-page #button {
+    height: auto;
+    width: 100%;
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+#button button {
+    height: 55px;
+    width: 180px;
+    cursor: pointer;
+    background: #29cde0;
+    color: #2b4d47;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    transform: scale(1);
+    margin-bottom: 16px;
+    transition: all .5s;
+}
+
+#start-page #button button:first-child {
+    margin-right: 40px;
+}
+
+#start-page #button button:hover,
+#winner #button button:hover {
+    transform: scale(0.90);
+}
 
 /* **************** game place page **************** */
 
