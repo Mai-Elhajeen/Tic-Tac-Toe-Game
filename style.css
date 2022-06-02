@@ -152,3 +152,16 @@ button {
 }
 
 /* **************** game winner page **************** */
+#winner {
+    display: none;
+}
+
+#winner #button {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#winner #button {
+    margin-top: 20px;
+}
