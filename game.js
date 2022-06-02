@@ -33,7 +33,7 @@ chooses.forEach(choose => {
     })
 })
 
-// add X if change turns = false || add O if change turns = true
+// ! add X if change turns = false || add O if change turns = true
 boxes.forEach(box => {
     box.addEventListener('click', e => {
         if (changeTurn == false) {
@@ -55,3 +55,43 @@ boxes.forEach(box => {
         winning();
     })
 })
+let winningCombination = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6]
+]
+
+let winning = () => {
+    for(let i=0; i <= 7; i++) {
+        let combination = winningCombination[i]
+        // console.log(combination);
+
+        if (boxes[combination[0]].id == "" || boxes[combination[1]].id == "" || boxes[combination[2]].id == ""){
+            continue;
+
+        }else if ((boxes[combination[0]].id == 'X' && boxes[combination[1]].id == 'X' && boxes[combination[2]].id == 'X')){
+            // console.log('X is winner')
+            winnerName.innerHTML = `Player X Win the Game!`;
+
+            // show winner page & hide game page
+            winnerPage.style.display = 'block'
+            gamePage.style.display = 'none'
+
+        }else if ((boxes[combination[0]].id == 'O' && boxes[combination[1]].id == 'O' && boxes[combination[2]].id == 'O')) {
+            // console.log('O is winner')
+            winnerName.innerHTML = `Player O Win the Game!`;
+
+            // show winner page & hide game page
+            winnerPage.style.display = 'block'
+            gamePage.style.display = 'none'
+
+        }else {
+            continue;
+        }
+    }
+}
