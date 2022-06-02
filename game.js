@@ -110,3 +110,8 @@ let drawing = () => {
         gamePage.style.display = 'none'
     }
 }
+
+// quite button
+quitBtn.addEventListener('click', () => {
+    window.location.reload();
+})
