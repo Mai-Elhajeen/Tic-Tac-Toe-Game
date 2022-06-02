@@ -12,6 +12,8 @@ const boxes = document.querySelectorAll('.box')
 
 const winnerPage = document.querySelector('#winner')
 const winnerName = document.querySelector('#winner-name')
+const quitBtn = document.querySelector('#quit')
+
 
 // change turns ===> turnX = False || turnO = true
 let changeTurn = null;
@@ -53,6 +55,7 @@ boxes.forEach(box => {
         }
 
         winning();
+        drawing();
     })
 })
 let winningCombination = [
@@ -95,3 +98,20 @@ let winning = () => {
         }
     }
 }
+
+// game draw
+let drawing = () => {
+    if (boxes[0].id != '' && boxes[1].id != '' && boxes[2].id != '' && boxes[3].id != '' &&
+    boxes[4].id != '' && boxes[5].id != '' && boxes[6].id != '' && boxes[7].id != '' && boxes[8].id != '') {
+        winnerName.innerHTML = `Match Draw!`;
+
+        // show winner page & hide game page
+        winnerPage.style.display = 'block'
+        gamePage.style.display = 'none'
+    }
+}
+
+// quite button
+quitBtn.addEventListener('click', () => {
+    window.location.reload();
+})
