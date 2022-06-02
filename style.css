@@ -78,5 +78,77 @@ button {
 }
 
 /* **************** game place page **************** */
+#game-page {
+    height: 400px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    display: none;
+}
+
+#game-page #header-btn {
+    height: 50px;
+    width: 250px;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 2px rgb(255, 255, 255, 26%), -2px -2px 5px rgb(0, 0, 0 , 87%);
+}
+
+#game-page #header-btn button{
+    height: 50px;
+    width: 125px;
+    border-radius: 50px;
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .60);
+}
+
+#game-page #header-btn #O-turn {
+    left: 125px;
+    z-index: 3;
+}
+#show-change {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 125px;
+    border-radius: 50px;
+    background: #29cde0;
+    z-index: 1;
+    transition: .2s;
+}
+
+/* **************** game place **************** */
+#game-place {
+    height: 290px;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    place-items: center;
+}
+
+.box {
+    height: 70px;
+    width: 70px;
+    box-shadow: 2px 2px 2px rgb(255, 255, 255, 26%), -2px -2px 5px rgb(0, 0, 0 , 26%);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+.box i {
+    font-size: 60px;
+    color: #29cde0;
+}
 
 /* **************** game winner page **************** */
